@@ -24,20 +24,17 @@
 
 ## 📐 Architecture
    The project structure is divided into three main layers:
-   - Domain: The heart of the application, all the business rules and entities.
-   - Data: Here is the external connection through use-case implementations.
-   - UI: The application interface.
+   - **Domain:** The heart of the application, all the business rules and entities.
+   - **Data:** Here is the external connection through use-case implementations.
+   - **UI:** The application interface.
 
   The application's data flow is simple and seeks **SOLID** principles.
   ![data-flow](https://user-images.githubusercontent.com/45527157/131367753-36e7a396-b6c0-488b-91e0-80fd439119a5.png)
   
-  **Page:** The responsibility of the page is to get the user actions to send to the presenter and show the presenter's feedback.
-  
-  **Presenter:** The presenter's responsibility is to receive the user actions from the page, obtain the use case data, and send the data to the page.
-  
-  **Usecase:** The use case is the business logic of the application.
-  
-  **Client:** The client's responsibility is to make the external connection with the API and return the data.
+  - **Page:** The responsibility of the page is to get the user actions to send to the presenter and show the presenter's feedback.
+  - **Presenter:** The presenter's responsibility is to receive the user actions from the page, obtain the use case data, and send the data to the page.
+  - **Usecase:** The use case is the business logic of the application.
+  - **Client:** The client's responsibility is to make the external connection with the API and return the data.
 
    
 ## 🎨 Layout
