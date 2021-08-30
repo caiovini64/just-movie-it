@@ -10,11 +10,15 @@
     Just Movie it is an App of movie recommendations.
 </h3>
 
+<div align="center"><a href="https://caioj3505.gitbook.io/just-movie-it/"><b>Project Documentation</b></a></div>
+
 ## 📃 About
 
 Just Movie It is an app of movie recommendations, where the user can see movie lists and see selected movie details.
 
 This project was recreated several times while I learning clean architecture.
+
+For more details about the project acces the **[documentation](https://caioj3505.gitbook.io/just-movie-it/).**
 
 **This project is in the planning stage and all that can be changed.**
 
@@ -31,19 +35,11 @@ This project was recreated several times while I learning clean architecture.
 
 
 ## 📐 Architecture
-   The project structure is divided into three main layers:
+   The project structure is divided into four main layers:
    - **Domain:** The heart of the application, all the business rules and entities.
    - **Data:** Here is the external connection through use-case implementations.
+   - **Infra:** Here is the HTTP client where the response from the external connection is handled.
    - **UI:** The application interface.
-
-  The application's data flow is simple and seeks **SOLID** principles.
-  ![data-flow](https://user-images.githubusercontent.com/45527157/131367753-36e7a396-b6c0-488b-91e0-80fd439119a5.png)
-  
-  - **Page:** The responsibility of the page is to get the user actions to send to the presenter and show the presenter's feedback.
-  - **Presenter:** The presenter's responsibility is to receive the user actions from the page, obtain the use case data, and send the data to the page.
-  - **Usecase:** The use case is the business logic of the application.
-  - **Client:** The client's responsibility is to make the external connection with the API and return the data.
-
    
 ## 🎨 Layout
 
