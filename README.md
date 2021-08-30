@@ -18,7 +18,7 @@ Just Movie It is an app of movie recommendations, where the user can see movie l
 
 This project was recreated several times while I learning clean architecture.
 
-For more details about the project acces the **[documentation](https://caioj3505.gitbook.io/just-movie-it/).**
+For more details about the project access the **[documentation](https://caioj3505.gitbook.io/just-movie-it/).**
 
 **This project is in the planning stage and all that can be changed.**
 
