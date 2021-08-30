@@ -10,6 +10,14 @@
     Just Movie it is an App of movie recommendations.
 </h3>
 
+## 📃 About
+
+Just Movie It is an app of movie recommendations, where the user can see movie lists and see selected movie details.
+
+This project was recreated several times while I learning clean architecture.
+
+**This project is in the planning stage and all that can be changed.**
+
 ## ⚙️ Functional Requirements
 
 - [ ] The system should allow sign in
