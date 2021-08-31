@@ -16,10 +16,6 @@
 
 Just Movie It is an app of movie recommendations, where the user can see movie lists and see selected movie details.
 
-This project was recreated several times while I learning clean architecture.
-
-For more details about the project access the **[documentation](https://caioj3505.gitbook.io/just-movie-it/).**
-
 **This project is in the planning stage and all that can be changed.**
 
 ## ⚙️ Functional Requirements
@@ -35,19 +31,16 @@ For more details about the project access the **[documentation](https://caioj350
 
 
 ## 📐 Architecture
-   The project structure is divided into four main layers:
-   - **Domain:** The heart of the application, all the business rules and entities.
-   - **Data:** Here is the external connection through use-case implementations.
-   - **Infra:** Here is the HTTP client where the response from the external connection is handled.
-   - **UI:** The application interface.
+   The application's architecture is based on google's Jetpack Architecture proposal for Android development with Kotlin. 
+   ![Untitled Workspace (2)](https://user-images.githubusercontent.com/45527157/131500335-ff461609-746c-4fcc-a8f8-d3a30c28c81c.png)
+   For more details on the software design, go to the **[documentation](https://caioj3505.gitbook.io/just-movie-it/)**.
+
+
    
 ## 🎨 Layout
 
-The application layout could be accessed in the [Figma](https://www.figma.com/file/yAUq38COHlCfjdNj85B9pf/Just-Movie-it?node-id=0%3A1).
+The application layout can be accessed in the [Figma](https://www.figma.com/file/yAUq38COHlCfjdNj85B9pf/Just-Movie-it?node-id=0%3A1).
 
-## 🛠 Technologies
 
-- **[Firebase](https://firebase.google.com/products/auth?gclsrc=aw.ds&gclid=CjwKCAjw9aiIBhA1EiwAJ_GTSoOXq5Yt_uQblGU9Z2aQuUxWfH8sD9eL1DcpVUXG11RJ7QxhshJ6sRoCKogQAvD_BwE)** - To authentication and realtime database.
-- **[Sourcetree](https://www.sourcetreeapp.com/)** - To better management of the branches
 
 
