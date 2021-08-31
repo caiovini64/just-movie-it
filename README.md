@@ -32,8 +32,8 @@ Just Movie It is an app of movie recommendations, where the user can see movie l
 
 ## 📐 Architecture
    The application's architecture is based on google's Jetpack Architecture proposal for Android development with Kotlin. 
-   ![Untitled Workspace (2)](https://user-images.githubusercontent.com/45527157/131500335-ff461609-746c-4fcc-a8f8-d3a30c28c81c.png)
-   For more details on the software design, go to the **[app documentation](https://caioj3505.gitbook.io/just-movie-it/)**.
+ ![DataFlow](https://user-images.githubusercontent.com/45527157/131545153-229f54ff-b546-4e08-a027-11771cfeff44.png)
+   For more details about the software design, access the **[app documentation](https://caioj3505.gitbook.io/just-movie-it/)**.
 
 
    
