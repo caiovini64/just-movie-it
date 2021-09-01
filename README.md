@@ -10,7 +10,6 @@
     Just Movie it is an App of movie recommendations.
 </h3>
 
-<div align="center"><a href="https://caioj3505.gitbook.io/just-movie-it/"><b>Project Documentation</b></a></div>
 
 ## 📃 About
 
@@ -33,7 +32,12 @@ Just Movie It is an app of movie recommendations, where the user can see movie l
 ## 📐 Architecture
    The application's architecture is based on google's Jetpack Architecture proposal for Android development with Kotlin. 
  ![DataFlow](https://user-images.githubusercontent.com/45527157/131545153-229f54ff-b546-4e08-a027-11771cfeff44.png)
-   For more details about the software design, access the **[app documentation](https://caioj3505.gitbook.io/just-movie-it/)**.
+   
+   For the **presentation layer**, the MVP Pattern was chosen, and the presenter is responsible for the state management of the view. The ViewModel class isn't the same as the MVVM, the ViewModel here is the data model that will be shown by the view. 
+   
+For the **data layer**, the Repository Pattern was chosen to decouple the app from the data source and isolate the data layer. 
+
+Using Repository Pattern, we have a simple class responsible to get the data from the data source and make that data readable for our application. The repository is a reliable point of access for our ViewModel.
 
 
    
