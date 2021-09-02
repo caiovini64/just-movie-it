@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/presentation/presenters/getx_login_presenter.dart';
 import 'package:just_movie_it/ui/components/components.dart';
+import 'package:just_movie_it/ui/mixins/mixins.dart';
 import 'package:just_movie_it/ui/pages/login/login_presenter.dart';
 import 'package:provider/provider.dart';
 import 'components/components.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatelessWidget with ResponsivenessManager {
   LoginPage({Key? key}) : super(key: key);
   final LoginPresenter presenter = GetxLoginPresenter();
 
@@ -13,13 +14,14 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: SingleChildScrollView(
             child: ListenableProvider<LoginPresenter>(
           create: (_) => presenter,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 100),
+              SizedBox(height: largePadding(context)),
               const Logo(),
               const SizedBox(height: 70),
               EmailInput(),
@@ -29,6 +31,7 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 35),
               LoginButton(),
               const SignUpButton(),
+              const SizedBox(height: 35),
             ],
           ),
         )),
