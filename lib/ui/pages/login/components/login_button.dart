@@ -5,7 +5,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StandardButton(
-      onPressed: () => print('a'),
+      onPressed: () => debugPrint('a'),
       child: const Text('Login'),
     );
   }
