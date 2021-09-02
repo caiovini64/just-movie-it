@@ -42,7 +42,12 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
 
   @override
   void validatePassword(String password) {
-    // TODO: implement validatePassword
+    _password = password;
+    if (_password.length <= 5) {
+      _passwordError.value = 'The password must be over 6 characters!';
+    } else {
+      _passwordError.value = '';
+    }
   }
 
   @override
