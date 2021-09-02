@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/ui/components/components.dart';
+import 'package:just_movie_it/ui/components/password_input.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,6 +18,8 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 70),
               EmailInput(),
               const SizedBox(height: 35),
+              PasswordInput(),
+              const ForgotPasswordButton(),
             ],
           ),
         ),

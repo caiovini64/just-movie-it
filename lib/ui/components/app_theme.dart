@@ -8,6 +8,10 @@ ThemeData makeAppTheme() {
     primaryColor: primaryColor,
     accentColor: accentColor,
     textTheme: TextTheme(
+      bodyText1: const TextStyle(
+        color: textColor,
+        fontWeight: FontWeight.w300,
+      ),
       bodyText2: TextStyle(
         color: textColor.withOpacity(0.3),
         fontWeight: FontWeight.w300,
