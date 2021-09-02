@@ -2,6 +2,9 @@ import 'package:get/get.dart';
 import 'package:just_movie_it/ui/pages/login/login_presenter.dart';
 
 class GetxLoginPresenter extends GetxController implements LoginPresenter {
+  late String _email;
+  late String _password;
+
   final RxString _emailError = ''.obs;
   final RxString _passwordError = ''.obs;
   final RxBool _isLoading = false.obs;
@@ -26,7 +29,15 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter {
 
   @override
   void validateEmail(String email) {
-    // TODO: implement validateEmail
+    _email = email;
+    final bool emailValid =
+        RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+            .hasMatch(_email.trim());
+    if (!emailValid) {
+      _emailError.value = 'Invalid email!';
+    } else {
+      _emailError.value = '';
+    }
   }
 
   @override
