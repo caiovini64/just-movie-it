@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:just_movie_it/presentation/presenters/getx_login_presenter.dart';
 import 'package:just_movie_it/ui/components/components.dart';
+import 'package:just_movie_it/ui/pages/login/login_presenter.dart';
+import 'package:provider/provider.dart';
 import 'components/components.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
+  final LoginPresenter presenter = GetxLoginPresenter();
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +15,8 @@ class LoginPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: SingleChildScrollView(
+            child: ListenableProvider<LoginPresenter>(
+          create: (_) => presenter,
           child: Column(
             children: [
               const SizedBox(height: 100),
@@ -25,7 +31,7 @@ class LoginPage extends StatelessWidget {
               const SignUpButton(),
             ],
           ),
-        ),
+        )),
       ),
     );
   }

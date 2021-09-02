@@ -27,6 +27,7 @@ dependencies:
 
   lint: ^1.6.0
   get:
+  provider:
 
 dev_dependencies:
   flutter_test:

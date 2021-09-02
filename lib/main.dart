@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: makeAppTheme(),
       initialRoute: '/login',
       getPages: [
-        GetPage(name: '/login', page: () => const LoginPage()),
+        GetPage(name: '/login', page: () => LoginPage()),
       ],
     );
   }
