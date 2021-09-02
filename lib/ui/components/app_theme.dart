@@ -7,5 +7,11 @@ ThemeData makeAppTheme() {
     buttonColor: primaryColor,
     primaryColor: primaryColor,
     accentColor: accentColor,
+    textTheme: TextTheme(
+      bodyText2: TextStyle(
+        color: textColor.withOpacity(0.3),
+        fontWeight: FontWeight.w300,
+      ),
+    ),
   );
 }
