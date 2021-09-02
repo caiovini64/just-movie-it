@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_movie_it/ui/components/components.dart';
-import 'package:just_movie_it/ui/pages/login_page.dart';
+import 'package:just_movie_it/ui/pages/login/login_page.dart';
 
 void main() {
   runApp(MyApp());
