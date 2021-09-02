@@ -15,7 +15,7 @@ class PasswordInput extends StatelessWidget {
         ),
         child: TextFormField(
           keyboardType: TextInputType.visiblePassword,
-          style: Theme.of(context).textTheme.bodyText2,
+          style: Theme.of(context).textTheme.bodyText1,
           decoration: InputDecoration(
             hintText: 'Password',
             hintStyle: Theme.of(context).textTheme.subtitle1,

@@ -21,7 +21,7 @@ class EmailInput extends StatelessWidget {
             ),
             child: TextFormField(
               keyboardType: TextInputType.emailAddress,
-              style: Theme.of(context).textTheme.bodyText2,
+              style: Theme.of(context).textTheme.bodyText1,
               onChanged: presenter.validateEmail,
               decoration: InputDecoration(
                 hintText: 'Email',
