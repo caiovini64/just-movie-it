@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_movie_it/ui/components/components.dart';
-import 'package:just_movie_it/ui/pages/login/login_page.dart';
+
+import 'main/factories/factories.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: makeAppTheme(),
       initialRoute: '/login',
       getPages: [
-        GetPage(name: '/login', page: () => LoginPage()),
+        GetPage(name: '/login', page: makeLoginPage),
       ],
     );
   }

@@ -7,8 +7,9 @@ import 'package:provider/provider.dart';
 import 'components/components.dart';
 
 class LoginPage extends StatelessWidget with ResponsivenessManager {
-  LoginPage({Key? key}) : super(key: key);
-  final LoginPresenter presenter = GetxLoginPresenter();
+  final LoginPresenter presenter;
+
+  const LoginPage(this.presenter);
 
   @override
   Widget build(BuildContext context) {
