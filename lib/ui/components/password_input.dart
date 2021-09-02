@@ -18,7 +18,7 @@ class PasswordInput extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyText2,
           decoration: InputDecoration(
             hintText: 'Password',
-            hintStyle: Theme.of(context).textTheme.bodyText2,
+            hintStyle: Theme.of(context).textTheme.subtitle1,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),

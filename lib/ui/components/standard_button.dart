@@ -14,7 +14,6 @@ class StandardButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(400, 60),
         primary: primaryColor,
-        onPrimary: Colors.white,
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),

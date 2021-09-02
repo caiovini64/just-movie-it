@@ -12,7 +12,12 @@ ThemeData makeAppTheme() {
         color: textColor,
         fontWeight: FontWeight.w300,
       ),
-      bodyText2: TextStyle(
+      bodyText2: const TextStyle(
+        color: primaryColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 16,
+      ),
+      subtitle1: TextStyle(
         color: textColor.withOpacity(0.3),
         fontWeight: FontWeight.w300,
       ),
