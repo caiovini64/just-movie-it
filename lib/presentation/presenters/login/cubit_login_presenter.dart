@@ -5,11 +5,7 @@ import 'package:meta/meta.dart';
 part 'cubit_login_state.dart';
 
 class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
-  CubitLoginPresenter() : super(LoginInitial());
-
-  @override
-  // TODO: implement emailError
-  String get emailError => throw UnimplementedError();
+  CubitLoginPresenter() : super(Initial());
 
   @override
   void goToSignUp() {
@@ -17,14 +13,11 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
   }
 
   @override
-  Future<void> login() {
-    // TODO: implement login
-    throw UnimplementedError();
+  Future<void> login() async {
+    emit(Loading());
+    await Future.delayed(Duration(seconds: 2));
+    emit(Done());
   }
-
-  @override
-  // TODO: implement passwordError
-  String get passwordError => throw UnimplementedError();
 
   @override
   void validateEmail(String email) {
