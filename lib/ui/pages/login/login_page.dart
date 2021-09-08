@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:just_movie_it/presentation/presenters/login/cubit_login_presenter.dart';
 import 'package:just_movie_it/ui/components/components.dart';
 import 'package:just_movie_it/ui/mixins/mixins.dart';
 import 'components/components.dart';
+import 'presentation/cubit_login_presenter.dart';
 
 class LoginPage extends StatelessWidget with ResponsivenessManager {
   final CubitLoginPresenter presenter;
