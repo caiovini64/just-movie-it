@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:just_movie_it/ui/pages/login/login_presenter.dart';
 import 'package:meta/meta.dart';
 
@@ -13,19 +14,38 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
   }
 
   @override
-  Future<void> login() async {
-    emit(Loading());
-    await Future.delayed(Duration(seconds: 2));
+  Future<void> login(
+      GlobalKey<FormState> formKey,
+      TextEditingController emailController,
+      TextEditingController passwordController) async {
+    final validate = formKey.currentState!.validate();
+    if (validate) {
+      emit(Loading());
+      await Future.delayed(const Duration(seconds: 3));
+      final email = emailController.value.text;
+      final password = passwordController.value.text;
+    }
     emit(Done());
   }
 
   @override
-  void validateEmail(String email) {
-    // TODO: implement validateEmail
+  String? validateEmail(String? email) {
+    final bool emailValid =
+        RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+            .hasMatch(email!.trim());
+    if (!emailValid) {
+      return 'Invalid email!';
+    } else {
+      return null;
+    }
   }
 
   @override
-  void validatePassword(String password) {
-    // TODO: implement validatePassword
+  String? validatePassword(String? password) {
+    if (password!.length <= 5) {
+      return 'The password must be over 6 characters!';
+    } else {
+      return null;
+    }
   }
 }

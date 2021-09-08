@@ -1,6 +1,12 @@
+import 'package:flutter/material.dart';
+
 abstract class LoginPresenter {
-  Future<void> login();
+  Future<void> login(
+    GlobalKey<FormState> formKey,
+    TextEditingController emailController,
+    TextEditingController passwordController,
+  );
   void goToSignUp();
-  void validateEmail(String email);
-  void validatePassword(String password);
+  String? validateEmail(String? email);
+  String? validatePassword(String? password);
 }

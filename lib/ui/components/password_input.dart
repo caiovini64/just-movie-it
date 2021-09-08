@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/ui/components/app_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:just_movie_it/ui/pages/login/presentation/cubit_login_presenter.dart';
 
 class PasswordInput extends StatelessWidget {
+  final TextEditingController controller;
+  const PasswordInput({Key? key, required this.controller}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final presenter = context.read<CubitLoginPresenter>();
     return Semantics(
       label: 'Password Input',
       child: Container(
@@ -14,6 +20,8 @@ class PasswordInput extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: TextFormField(
+          validator: (value) => presenter.validatePassword(value),
+          controller: controller,
           keyboardType: TextInputType.visiblePassword,
           style: Theme.of(context).textTheme.bodyText1,
           decoration: InputDecoration(
