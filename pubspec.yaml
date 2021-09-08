@@ -30,6 +30,7 @@ dependencies:
   provider:
   flutter_bloc:
   device_preview: 0.7.4
+  equatable:
 
 dev_dependencies:
   flutter_test:
