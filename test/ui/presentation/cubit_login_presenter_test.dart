@@ -43,4 +43,14 @@ void main() {
       expect(result, isA<String>());
     });
   });
+
+  group('validate password', () {
+    test(
+      'should return null when the password is longer than 5 characters',
+      () {
+        final result = presenter.validatePassword('123456');
+        expect(result, null);
+      },
+    );
+  });
 }
