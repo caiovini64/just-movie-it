@@ -50,8 +50,8 @@ void main() {
     test(
         'should returns an AuthError when calls to the datasource throw an AuthException',
         () async {
-      when(() => datasource.login(any())).thenThrow(
-          AuthException(code: 404, message: 'TOO_MANY_ATTEMPTS_TRY_LATER'));
+      when(() => datasource.login(any())).thenThrow(const AuthException(
+          code: 404, message: 'TOO_MANY_ATTEMPTS_TRY_LATER'));
       final result = await repository.login(authParameters);
       expect(result, const Left(AuthError.tooManyAttempts));
     });
