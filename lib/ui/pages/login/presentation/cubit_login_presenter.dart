@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/ui/pages/login/login_presenter.dart';
 import 'package:meta/meta.dart';

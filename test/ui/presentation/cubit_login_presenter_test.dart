@@ -12,18 +12,16 @@ void main() {
   late GlobalKey<FormState> formKey;
   late String email;
   late String password;
+  late CubitLoginPresenter presenter;
 
   setUp(() {
     formKey = FormKeySpy();
     email = faker.internet.email();
     password = faker.internet.password();
+    presenter = CubitLoginPresenter();
   });
-  group('Login', () {
-    blocTest<CubitLoginPresenter, LoginState>(
-      'should emit a LoginState when the login method is called',
-      build: () => CubitLoginPresenter(),
-      act: (cubit) => cubit.login(formKey, email, password),
-      expect: () => <LoginState>[],
-    );
+
+  test('should have initial state as [Initial]', () {
+    expect(presenter.state.runtimeType, Initial);
   });
 }
