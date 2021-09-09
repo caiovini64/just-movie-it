@@ -38,5 +38,9 @@ void main() {
       final result = presenter.validateEmail(email);
       expect(result, null);
     });
+    test('should return a String when the email is not valid', () {
+      final result = presenter.validateEmail('email@isnotvalid');
+      expect(result, isA<String>());
+    });
   });
 }
