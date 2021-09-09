@@ -37,10 +37,12 @@ void main() {
     userEntity = UserEntity(email: email, id: id, token: token);
   });
 
-  test('should returns an UserEntity when calls to datasource succeeds',
-      () async {
-    when(() => datasource.login(any())).thenAnswer((_) async => userEntity);
-    final result = await repository.login(authParameters);
-    expect(result, userEntity);
+  group('login', () {
+    test('should returns an UserEntity when calls to datasource succeeds',
+        () async {
+      when(() => datasource.login(any())).thenAnswer((_) async => userEntity);
+      final result = await repository.login(authParameters);
+      expect(result, userEntity);
+    });
   });
 }
