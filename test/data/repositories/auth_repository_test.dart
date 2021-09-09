@@ -10,6 +10,8 @@ import 'package:mocktail/mocktail.dart';
 
 class AuthDatasourceSpy extends Mock implements IAuthDatasource {}
 
+class AuthParametersFake extends Fake implements AuthParameters {}
+
 void main() {
   late IAuthDatasource datasource;
   late IAuthRepository repository;
@@ -19,6 +21,10 @@ void main() {
   late String id;
   late String token;
   late UserEntity userEntity;
+
+  setUpAll(() {
+    registerFallbackValue(AuthParametersFake());
+  });
 
   setUp(() {
     datasource = AuthDatasourceSpy();
@@ -33,8 +39,7 @@ void main() {
 
   test('should returns an UserEntity when calls to datasource succeeds',
       () async {
-    when(() => datasource.login(authParameters))
-        .thenAnswer((_) async => userEntity);
+    when(() => datasource.login(any())).thenAnswer((_) async => userEntity);
     final result = await repository.login(authParameters);
     expect(result, userEntity);
   });
