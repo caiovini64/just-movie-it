@@ -21,8 +21,11 @@ class LoginButton extends StatelessWidget {
     return BlocBuilder<CubitLoginPresenter, LoginState>(
       builder: (context, state) {
         return StandardButton(
-          onPressed: () =>
-              presenter.login(formKey, emailController, passwordController),
+          onPressed: () => presenter.login(
+            formKey,
+            emailController.value.text,
+            passwordController.value.text,
+          ),
           child: state is Loading
               ? const CircularProgressIndicator(color: Colors.white)
               : const Text('Login'),

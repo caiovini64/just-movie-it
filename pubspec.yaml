@@ -27,10 +27,12 @@ dependencies:
 
   lint: ^1.6.0
   get:
-  provider:
   flutter_bloc:
   device_preview: 0.7.4
   equatable:
+  bloc_test:
+  mocktail:
+  faker:
 
 dev_dependencies:
   flutter_test:

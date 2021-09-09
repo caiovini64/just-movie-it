@@ -15,15 +15,13 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
 
   @override
   Future<void> login(
-      GlobalKey<FormState> formKey,
-      TextEditingController emailController,
-      TextEditingController passwordController) async {
+      GlobalKey<FormState> formKey, String email, String password) async {
     final validate = formKey.currentState!.validate();
     if (validate) {
       emit(Loading());
       await Future.delayed(const Duration(seconds: 3));
-      final email = emailController.value.text;
-      final password = passwordController.value.text;
+      final _email = email;
+      final _password = password;
     }
     emit(Done());
   }
