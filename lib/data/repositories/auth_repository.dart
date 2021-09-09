@@ -13,7 +13,12 @@ class AuthRepository implements IAuthRepository {
   @override
   Future<Either<AuthError, UserEntity>> login(
       AuthParameters authParameters) async {
-    final result = await datasource.login(authParameters);
-    return Right(result);
+    try {
+      final result = await datasource.login(authParameters);
+      return Right(result);
+    } on AuthException catch (exception) {
+      final AuthError error = AuthException.toError(exception.message);
+      return Left(error);
+    }
   }
 }

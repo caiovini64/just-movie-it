@@ -8,7 +8,7 @@ enum AuthError {
 }
 
 extension AuthErrorExtension on AuthError {
-  String get description {
+  String get message {
     switch (this) {
       case AuthError.somethingWrong:
         return 'Something wrong!';
