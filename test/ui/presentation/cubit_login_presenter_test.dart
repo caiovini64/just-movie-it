@@ -24,10 +24,19 @@ void main() {
     expect(presenter.state, Initial());
   });
 
-  blocTest(
-    'should emit [Loading, Done] state when login was success',
-    build: () => presenter,
-    act: (CubitLoginPresenter cubit) async => cubit.login(email, password),
-    expect: () => [Loading(), Done()],
-  );
+  group('login', () {
+    blocTest(
+      'should emit [Loading, Done] state when login success',
+      build: () => presenter,
+      act: (CubitLoginPresenter cubit) async => cubit.login(email, password),
+      expect: () => [Loading(), Done()],
+    );
+  });
+
+  group('validate email', () {
+    test('should return null when the email is valid', () {
+      final result = presenter.validateEmail(email);
+      expect(result, null);
+    });
+  });
 }
