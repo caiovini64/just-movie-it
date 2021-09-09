@@ -52,5 +52,12 @@ void main() {
         expect(result, null);
       },
     );
+    test(
+      'should return String when the password is less than 6 characters',
+      () {
+        final result = presenter.validatePassword('12345');
+        expect(result, isA<String>());
+      },
+    );
   });
 }
