@@ -13,7 +13,6 @@ void main() {
   late String email;
   late String password;
   late CubitLoginPresenter presenter;
-
   setUp(() {
     formKey = FormKeySpy();
     email = faker.internet.email();
@@ -22,6 +21,13 @@ void main() {
   });
 
   test('should have initial state as [Initial]', () {
-    expect(presenter.state.runtimeType, Initial);
+    expect(presenter.state, Initial());
   });
+
+  blocTest(
+    'should emit [Loading, Done] state when login was success',
+    build: () => presenter,
+    act: (CubitLoginPresenter cubit) async => cubit.login(email, password),
+    expect: () => [Loading(), Done()],
+  );
 }
