@@ -1,10 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:just_movie_it/domain/helpers/errors/errors.dart';
 
-class AuthException implements Exception {
+class AuthException extends Equatable implements Exception {
   final int code;
   final String message;
 
-  AuthException({
+  const AuthException({
     required this.code,
     required this.message,
   });
@@ -34,5 +35,5 @@ class AuthException implements Exception {
   }
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [code, message];
 }
