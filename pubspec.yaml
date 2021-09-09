@@ -33,6 +33,7 @@ dependencies:
   bloc_test:
   mocktail:
   faker:
+  dartz:
 
 dev_dependencies:
   flutter_test:

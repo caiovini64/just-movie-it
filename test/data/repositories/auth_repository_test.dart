@@ -1,9 +1,12 @@
+import 'package:dartz/dartz.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
 import 'package:just_movie_it/data/models/user_model.dart';
 import 'package:just_movie_it/data/repositories/auth_repository.dart';
 import 'package:just_movie_it/domain/datasources/datasources.dart';
 import 'package:just_movie_it/domain/entities/entities.dart';
+import 'package:just_movie_it/domain/helpers/errors/auth_error.dart';
 import 'package:just_movie_it/domain/helpers/parameters/auth_parameters.dart';
 import 'package:just_movie_it/domain/repositories/repositories.dart';
 import 'package:mocktail/mocktail.dart';
@@ -42,7 +45,7 @@ void main() {
         () async {
       when(() => datasource.login(any())).thenAnswer((_) async => userEntity);
       final result = await repository.login(authParameters);
-      expect(result, userEntity);
+      expect(result, Right(userEntity));
     });
   });
 }

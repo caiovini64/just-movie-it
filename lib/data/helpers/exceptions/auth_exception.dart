@@ -1,14 +1,14 @@
-class AuthenticationException implements Exception {
+class AuthException implements Exception {
   final int code;
   final String message;
 
-  AuthenticationException({
+  AuthException({
     required this.code,
     required this.message,
   });
 
-  factory AuthenticationException.fromJson(Map<String, dynamic> json) {
-    return AuthenticationException(
+  factory AuthException.fromJson(Map<String, dynamic> json) {
+    return AuthException(
       code: json['error']['code'] as int,
       message: json['error']['message'] as String,
     );
