@@ -3,5 +3,5 @@ import 'package:just_movie_it/domain/entities/entities.dart';
 import 'package:just_movie_it/domain/helpers/parameters/parameters.dart';
 
 abstract class IAuthDatasource {
-  Future<UserModel> login(AuthParameters authParameters);
+  Future<UserEntity> login(AuthParameters authParameters);
 }

@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:just_movie_it/data/models/user_model.dart';
 import 'package:just_movie_it/data/repositories/auth_repository.dart';
 import 'package:just_movie_it/domain/datasources/datasources.dart';
+import 'package:just_movie_it/domain/entities/entities.dart';
 import 'package:just_movie_it/domain/helpers/parameters/auth_parameters.dart';
 import 'package:just_movie_it/domain/repositories/repositories.dart';
 import 'package:mocktail/mocktail.dart';
@@ -17,7 +18,7 @@ void main() {
   late AuthParameters authParameters;
   late String id;
   late String token;
-  late UserModel userModel;
+  late UserEntity userEntity;
 
   setUp(() {
     datasource = AuthDatasourceSpy();
@@ -27,12 +28,14 @@ void main() {
     authParameters = AuthParameters(email, password);
     id = faker.randomGenerator.numberOfLength(10);
     token = faker.randomGenerator.string(30);
-    userModel = UserModel(email: email, id: id, token: token);
+    userEntity = UserEntity(email: email, id: id, token: token);
   });
 
   test('should returns an UserEntity when calls to datasource succeeds',
       () async {
     when(() => datasource.login(authParameters))
-        .thenAnswer((_) async => userModel);
+        .thenAnswer((_) async => userEntity);
+    final result = await repository.login(authParameters);
+    expect(result, userEntity);
   });
 }

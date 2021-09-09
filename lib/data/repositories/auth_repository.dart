@@ -8,8 +8,8 @@ class AuthRepository implements IAuthRepository {
   AuthRepository(this.datasource);
 
   @override
-  Future<UserEntity> login(AuthParameters authParameters) {
-    // TODO: implement login
-    throw UnimplementedError();
+  Future<UserEntity> login(AuthParameters authParameters) async {
+    final result = await datasource.login(authParameters);
+    return result;
   }
 }
