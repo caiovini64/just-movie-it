@@ -4,9 +4,8 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-      - feature/add-github-actions
+    tags:
+      - "v*.*.*"
   pull_request:
     branches: [ main ]
 
