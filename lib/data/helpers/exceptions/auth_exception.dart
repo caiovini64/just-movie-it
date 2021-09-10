@@ -17,7 +17,7 @@ class AuthException extends Equatable implements Exception {
     );
   }
 
-  static DomainError toError(String message) {
+  DomainError toDomainError() {
     switch (message) {
       case 'EMAIL_NOT_FOUND':
         return DomainError.emailNotFound;

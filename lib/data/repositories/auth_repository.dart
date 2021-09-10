@@ -21,7 +21,9 @@ class AuthRepository implements IAuthRepository {
       final result = await datasource.login(authParameters);
       return Right(result);
     } on AuthException catch (exception) {
-      final DomainError error = AuthException.toError(exception.message);
+      final DomainError error =
+          AuthException(code: exception.code, message: exception.message)
+              .toDomainError();
       return Left(error);
     } on SocketException {
       return const Left(DomainError.noInternet);
