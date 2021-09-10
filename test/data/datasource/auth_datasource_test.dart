@@ -42,5 +42,12 @@ void main() {
           (_) async => HttpResponse(data: kUserJson, statusCode: 400));
       expect(datasource.login(parameters), throwsA(isA<AuthException>()));
     });
+    test('should return an [TimeoutException] when breaks the timeout',
+        () async {
+      when(() => client.post(any(), body: any(named: 'body'))).thenAnswer(
+          (_) async => Future.delayed(const Duration(seconds: 12))
+              .then((value) => HttpResponse(data: kUserJson, statusCode: 400)));
+      expect(datasource.login(parameters), throwsA(isA<TimeoutException>()));
+    });
   });
 }
