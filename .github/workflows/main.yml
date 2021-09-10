@@ -17,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@master
+      - run: echo "${{ secrets.FIREBASE_API_KEY }}" > .env
+      - run: cat .env
       - run: flutter pub get
       - run: flutter test
       - run: flutter build apk 
