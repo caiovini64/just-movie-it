@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -26,6 +27,8 @@ class AuthRepository implements IAuthRepository {
       return const Left(DomainError.noInternet);
     } on ServerException {
       return const Left(DomainError.serverError);
+    } on TimeoutException {
+      return const Left(DomainError.noInternet);
     }
   }
 }

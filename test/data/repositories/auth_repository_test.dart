@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -58,18 +59,25 @@ void main() {
       expect(result, const Left(DomainError.tooManyAttempts));
     });
     test(
-        'should return an [DomainError.noInternet] when calls to the datasource throw a SocketException',
+        'should return a [DomainError.noInternet] when calls to the datasource throw a SocketException',
         () async {
       when(() => datasource.login(any())).thenThrow(const SocketException(''));
       final result = await repository.login(authParameters);
       expect(result, const Left(DomainError.noInternet));
     });
     test(
-        'should return an [DomainError.serverError] when calls to the datasource throw a ServerException',
+        'should return a [DomainError.serverError] when calls to the datasource throw a ServerException',
         () async {
       when(() => datasource.login(any())).thenThrow(ServerException());
       final result = await repository.login(authParameters);
       expect(result, const Left(DomainError.serverError));
+    });
+    test(
+        'should return a [DomainError.noInternet] when calls to the datasource throw a TimeoutException',
+        () async {
+      when(() => datasource.login(any())).thenThrow(TimeoutException(''));
+      final result = await repository.login(authParameters);
+      expect(result, const Left(DomainError.noInternet));
     });
   });
 }
