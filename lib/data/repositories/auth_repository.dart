@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
 import 'package:just_movie_it/domain/datasources/auth_datasource.dart';
@@ -19,6 +21,8 @@ class AuthRepository implements IAuthRepository {
     } on AuthException catch (exception) {
       final DomainError error = AuthException.toError(exception.message);
       return Left(error);
+    } on SocketException catch (_) {
+      return const Left(DomainError.noInternet);
     }
   }
 }

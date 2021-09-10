@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -41,19 +43,27 @@ void main() {
   });
 
   group('login', () {
-    test('should returns an UserEntity when calls to datasource succeeds',
+    test('should return an UserEntity when calls to the datasource succeed',
         () async {
       when(() => datasource.login(any())).thenAnswer((_) async => userEntity);
       final result = await repository.login(authParameters);
       expect(result, Right(userEntity));
     });
     test(
-        'should returns an AuthError when calls to the datasource throw an AuthException',
+        'should return an [AuthError] when calls to the datasource throw an AuthException',
         () async {
       when(() => datasource.login(any())).thenThrow(const AuthException(
           code: 404, message: 'TOO_MANY_ATTEMPTS_TRY_LATER'));
       final result = await repository.login(authParameters);
       expect(result, const Left(DomainError.tooManyAttempts));
     });
+  });
+
+  test(
+      'should return an [DomainError.noInternet] when calls to the datasource throw a SocketException',
+      () async {
+    when(() => datasource.login(any())).thenThrow(const SocketException(''));
+    final result = await repository.login(authParameters);
+    expect(result, const Left(DomainError.noInternet));
   });
 }
