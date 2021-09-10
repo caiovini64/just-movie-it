@@ -39,7 +39,7 @@ void main() {
     });
     test('should return an [AuthException] when statusCode was 400', () async {
       when(() => client.post(any(), body: any(named: 'body'))).thenAnswer(
-          (_) async => HttpResponse(data: kUserJson, statusCode: 400));
+          (_) async => HttpResponse(data: dataErrorJson, statusCode: 400));
       expect(datasource.login(parameters), throwsA(isA<AuthException>()));
     });
     test('should return an [TimeoutException] when breaks the timeout',
