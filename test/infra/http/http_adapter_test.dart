@@ -35,4 +35,13 @@ void main() {
       verify(() => client.get(Uri.parse(url)));
     });
   });
+  group('HttpAdapter post', () {
+    test('should return an HttpResponse when calls to the client succeed',
+        () async {
+      when(() => client.post(any(), body: any(named: 'body')))
+          .thenAnswer((_) async => response);
+      final result = await httpAdapter.post(url, body: {});
+      expect(result, isA<HttpResponse>());
+    });
+  });
 }

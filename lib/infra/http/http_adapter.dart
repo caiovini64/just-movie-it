@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart';
 import 'package:just_movie_it/data/http/http_client.dart';
 
@@ -12,8 +14,12 @@ class HttpAdapter implements HttpClient {
   }
 
   @override
-  Future<HttpResponse> post(String url, {required Map<String, dynamic> body}) {
-    // TODO: implement post
-    throw UnimplementedError();
+  Future<HttpResponse> post(String url,
+      {required Map<String, dynamic> body}) async {
+    final Response response = await client.post(
+      Uri.parse(url),
+      body: jsonEncode(body),
+    );
+    return HttpResponse(data: response.body, statusCode: response.statusCode);
   }
 }
