@@ -6,7 +6,7 @@ import 'package:just_movie_it/data/models/user_model.dart';
 import 'package:just_movie_it/data/repositories/auth_repository.dart';
 import 'package:just_movie_it/domain/datasources/datasources.dart';
 import 'package:just_movie_it/domain/entities/entities.dart';
-import 'package:just_movie_it/domain/helpers/errors/auth_error.dart';
+import 'package:just_movie_it/domain/helpers/errors/domain_error.dart';
 import 'package:just_movie_it/domain/helpers/parameters/auth_parameters.dart';
 import 'package:just_movie_it/domain/repositories/repositories.dart';
 import 'package:mocktail/mocktail.dart';
@@ -53,7 +53,7 @@ void main() {
       when(() => datasource.login(any())).thenThrow(const AuthException(
           code: 404, message: 'TOO_MANY_ATTEMPTS_TRY_LATER'));
       final result = await repository.login(authParameters);
-      expect(result, const Left(AuthError.tooManyAttempts));
+      expect(result, const Left(DomainError.tooManyAttempts));
     });
   });
 }

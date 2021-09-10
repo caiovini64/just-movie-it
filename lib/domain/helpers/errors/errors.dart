@@ -1,1 +1,1 @@
-export 'auth_error.dart';
+export 'domain_error.dart';

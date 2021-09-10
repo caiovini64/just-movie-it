@@ -1,4 +1,4 @@
-enum AuthError {
+enum DomainError {
   somethingWrong,
   emailExists,
   tooManyAttempts,
@@ -7,20 +7,20 @@ enum AuthError {
   userDisabled,
 }
 
-extension AuthErrorExtension on AuthError {
+extension DomainErrorExtension on DomainError {
   String get message {
     switch (this) {
-      case AuthError.somethingWrong:
+      case DomainError.somethingWrong:
         return 'Something wrong!';
-      case AuthError.emailExists:
+      case DomainError.emailExists:
         return 'The email exists';
-      case AuthError.tooManyAttempts:
+      case DomainError.tooManyAttempts:
         return 'Too many attempts, try again later!';
-      case AuthError.emailNotFound:
+      case DomainError.emailNotFound:
         return 'Email not found.';
-      case AuthError.invalidPassword:
+      case DomainError.invalidPassword:
         return 'Invalid password.';
-      case AuthError.userDisabled:
+      case DomainError.userDisabled:
         return 'User disabled.';
     }
   }

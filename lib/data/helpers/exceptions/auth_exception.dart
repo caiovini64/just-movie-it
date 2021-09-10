@@ -17,20 +17,20 @@ class AuthException extends Equatable implements Exception {
     );
   }
 
-  static AuthError toError(String message) {
+  static DomainError toError(String message) {
     switch (message) {
       case 'EMAIL_NOT_FOUND':
-        return AuthError.emailNotFound;
+        return DomainError.emailNotFound;
       case 'INVALID_PASSWORD':
-        return AuthError.invalidPassword;
+        return DomainError.invalidPassword;
       case 'USER_DISABLED':
-        return AuthError.userDisabled;
+        return DomainError.userDisabled;
       case 'EMAIL_EXISTS':
-        return AuthError.emailExists;
+        return DomainError.emailExists;
       case 'TOO_MANY_ATTEMPTS_TRY_LATER':
-        return AuthError.tooManyAttempts;
+        return DomainError.tooManyAttempts;
       default:
-        return AuthError.somethingWrong;
+        return DomainError.somethingWrong;
     }
   }
 
