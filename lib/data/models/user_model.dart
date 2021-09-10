@@ -11,5 +11,13 @@ class UserModel {
     required this.token,
   });
 
+  factory UserModel.fromJson(Map json) {
+    return UserModel(
+      email: json['email'] as String,
+      id: json['localId'] as String,
+      token: json['idToken'] as String,
+    );
+  }
+
   UserEntity toEntity() => UserEntity(id: id, email: email, token: token);
 }
