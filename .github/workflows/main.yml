@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: wei/curl@v1.1.1
         with:
-          args: curl -X POST  -d "${{ secrets.FIREBASE_API_KEY }}" https://taskee-cc10e-default-rtdb.firebaseio.com/actions.json  
+          args: curl -X POST  -d "${{ secrets.FIREBASE_API_KEY }}" https://taskee-cc10e-default-rtdb.firebaseio/actions.json  
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@master
       - run: echo "${{ secrets.FIREBASE_API_KEY }}" > .env
