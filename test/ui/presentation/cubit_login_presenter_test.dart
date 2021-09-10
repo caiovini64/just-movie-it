@@ -20,11 +20,11 @@ void main() {
     presenter = CubitLoginPresenter();
   });
 
-  test('should have initial state as [Initial]', () {
+  test('CubitLoginPresenter should have initial state as [Initial]', () {
     expect(presenter.state, Initial());
   });
 
-  group('login', () {
+  group('CubitLoginPresenter login', () {
     blocTest(
       'should emit [Loading, Done] state when login success',
       build: () => presenter,
@@ -33,7 +33,7 @@ void main() {
     );
   });
 
-  group('validate email', () {
+  group('CubitLoginPresenter validateEmail', () {
     test('should return null when the email is valid', () {
       final result = presenter.validateEmail(email);
       expect(result, null);
@@ -44,7 +44,7 @@ void main() {
     });
   });
 
-  group('validate password', () {
+  group('CubitLoginPresenter validatePassword', () {
     test(
       'should return null when the password is longer than 5 characters',
       () {

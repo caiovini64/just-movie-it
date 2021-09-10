@@ -5,7 +5,6 @@ import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
 import 'package:just_movie_it/data/helpers/exceptions/server_exception.dart';
-import 'package:just_movie_it/data/models/user_model.dart';
 import 'package:just_movie_it/data/repositories/auth_repository.dart';
 import 'package:just_movie_it/domain/datasources/datasources.dart';
 import 'package:just_movie_it/domain/entities/entities.dart';
@@ -43,7 +42,7 @@ void main() {
     userEntity = UserEntity(email: email, id: id, token: token);
   });
 
-  group('login', () {
+  group('AuthRepository login', () {
     test('should return an UserEntity when calls to the datasource succeed',
         () async {
       when(() => datasource.login(any())).thenAnswer((_) async => userEntity);

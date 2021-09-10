@@ -26,7 +26,7 @@ void main() {
     response = Response('', 200);
   });
 
-  group('get', () {
+  group('HttpAdapter get', () {
     test('should return an HttpResponse when calls to the client succeed',
         () async {
       when(() => client.get(any())).thenAnswer((_) async => response);
