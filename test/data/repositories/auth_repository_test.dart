@@ -58,20 +58,19 @@ void main() {
       final result = await repository.login(authParameters);
       expect(result, const Left(DomainError.tooManyAttempts));
     });
-  });
-
-  test(
-      'should return an [DomainError.noInternet] when calls to the datasource throw a SocketException',
-      () async {
-    when(() => datasource.login(any())).thenThrow(const SocketException(''));
-    final result = await repository.login(authParameters);
-    expect(result, const Left(DomainError.noInternet));
-  });
-  test(
-      'should return an [DomainError.serverError] when calls to the datasource throw a ServerException',
-      () async {
-    when(() => datasource.login(any())).thenThrow(ServerException());
-    final result = await repository.login(authParameters);
-    expect(result, const Left(DomainError.serverError));
+    test(
+        'should return an [DomainError.noInternet] when calls to the datasource throw a SocketException',
+        () async {
+      when(() => datasource.login(any())).thenThrow(const SocketException(''));
+      final result = await repository.login(authParameters);
+      expect(result, const Left(DomainError.noInternet));
+    });
+    test(
+        'should return an [DomainError.serverError] when calls to the datasource throw a ServerException',
+        () async {
+      when(() => datasource.login(any())).thenThrow(ServerException());
+      final result = await repository.login(authParameters);
+      expect(result, const Left(DomainError.serverError));
+    });
   });
 }
