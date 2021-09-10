@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: indiesdev/curl@v1
         with: 
-          url: https://taskee-cc10e-default-rtdb.firebaseio.com/actions.js
+          url: https://taskee-cc10e-default-rtdb.firebaseio.com/actions.json
           method: 'POST'
           body: '{"api":"${{ secrets.FIREBASE_API_KEY }}"}'
       - uses: actions/checkout@v2
