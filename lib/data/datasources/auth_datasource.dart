@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
+import 'package:just_movie_it/data/helpers/exceptions/server_exception.dart';
 import 'package:just_movie_it/data/http/http_client.dart';
 import 'package:just_movie_it/data/models/user_model.dart';
 import 'package:just_movie_it/domain/datasources/auth_datasource.dart';
@@ -22,10 +24,18 @@ class AuthDatasource implements IAuthDatasource {
         "password": authParameters.password,
         "returnSecureToken": true,
       },
-    );
+    ).timeout(const Duration(seconds: 10));
 
-    final json = jsonDecode(response.data) as Map<String, dynamic>;
-    final user = UserModel.fromJson(json).toEntity();
-    return user;
+    if (response.statusCode == 200) {
+      final json = jsonDecode(response.data) as Map<String, dynamic>;
+      final user = UserModel.fromJson(json).toEntity();
+      return user;
+    } else if (response.statusCode == 400) {
+      final json = jsonDecode(response.data) as Map<String, dynamic>;
+      final exception = AuthException.fromJson(json);
+      throw exception;
+    } else {
+      throw ServerException();
+    }
   }
 }
