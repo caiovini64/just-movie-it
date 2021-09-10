@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:http/http.dart';
 import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
 import 'package:just_movie_it/data/helpers/exceptions/server_exception.dart';
 import 'package:just_movie_it/data/http/http_client.dart';

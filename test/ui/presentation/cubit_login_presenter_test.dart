@@ -1,23 +1,22 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:faker/faker.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:just_movie_it/domain/repositories/auth_repository.dart';
 import 'package:just_movie_it/ui/pages/login/presentation/cubit_login_presenter.dart';
 import 'package:mocktail/mocktail.dart';
 
-class FormKeySpy extends Mock implements GlobalKey<FormState> {}
+class AuthRepositorySpy extends Mock implements IAuthRepository {}
 
 void main() {
-  late GlobalKey<FormState> formKey;
   late String email;
   late String password;
   late CubitLoginPresenter presenter;
+  late IAuthRepository authRepository;
   setUp(() {
-    formKey = FormKeySpy();
     email = faker.internet.email();
     password = faker.internet.password();
-    presenter = CubitLoginPresenter();
+    authRepository = AuthRepositorySpy();
+    presenter = CubitLoginPresenter(authRepository);
   });
 
   test('CubitLoginPresenter should have initial state as [Initial]', () {
