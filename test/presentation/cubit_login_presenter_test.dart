@@ -1,11 +1,15 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:dartz/dartz.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:just_movie_it/modules/authentication/domain/helpers/parameters/auth_parameters.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'package:just_movie_it/modules/authentication/domain/repositories/auth_repository.dart';
 import 'package:just_movie_it/modules/authentication/presentation/presenters/login/cubit_login_presenter.dart';
+
+import '../helpers/user_mocks.dart';
 
 class FormKeySpy extends Mock implements GlobalKey<FormState> {}
 
@@ -31,7 +35,11 @@ void main() {
     blocTest(
       'should emit [Loading, Done] state when login success',
       build: () => presenter,
-      act: (CubitLoginPresenter cubit) async => cubit.login(email, password),
+      act: (CubitLoginPresenter cubit) async {
+        when(() => repository.login(AuthParameters(email, password)))
+            .thenAnswer((_) async => const Right(kUserEntity));
+        cubit.login(email, password);
+      },
       expect: () => [Loading(), Done()],
     );
   });
