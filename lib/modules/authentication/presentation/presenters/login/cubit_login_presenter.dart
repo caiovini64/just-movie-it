@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:just_movie_it/modules/authentication/domain/helpers/parameters/auth_parameters.dart';
 import 'package:just_movie_it/modules/authentication/domain/repositories/auth_repository.dart';
 import 'package:meta/meta.dart';
 
@@ -19,9 +20,8 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
   @override
   Future<void> login(String email, String password) async {
     emit(Loading());
-    await Future.delayed(const Duration(seconds: 3));
-    final _email = email;
-    final _password = password;
+    final result = await repository.login(AuthParameters(email, password));
+    print(result);
     emit(Done());
   }
 

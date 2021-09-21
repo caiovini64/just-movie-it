@@ -4,4 +4,5 @@ import 'package:just_movie_it/modules/authentication/main/factories/client/http_
 import 'package:just_movie_it/shared/enviroment/endpoints.dart';
 
 IAuthDatasource makeAuthDatasource() => AuthDatasource(
-    url: FirebaseEndpoints.login('signUp'), client: makeHttpAdapter());
+    url: FirebaseEndpoints.login('signInWithPassword'),
+    client: makeHttpAdapter());
