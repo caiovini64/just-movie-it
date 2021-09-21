@@ -1,9 +1,10 @@
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:just_movie_it/data/http/http_client.dart';
-import 'package:just_movie_it/infra/http/http_adapter.dart';
 import 'package:mocktail/mocktail.dart';
+
+import 'package:just_movie_it/shared/data/http/http_client.dart';
+import 'package:just_movie_it/shared/infra/http/http_adapter.dart';
 
 class ClientSpy extends Mock implements Client {}
 

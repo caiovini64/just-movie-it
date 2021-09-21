@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
-import 'package:just_movie_it/ui/components/components.dart';
 
-import 'main/factories/factories.dart';
+import 'modules/authentication/main/factories/pages/pages.dart';
+import 'shared/ui/components/components.dart';
 
 // ignore: avoid_void_async
 void main() async {
