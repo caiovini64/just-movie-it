@@ -46,4 +46,26 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
       return null;
     }
   }
+
+  @override
+  void obscureText() {
+    if (state is Initial) {
+      emit(ObscureText(true));
+      return;
+    }
+    if ((state as ObscureText).isObscure == false) {
+      emit(ObscureText(true));
+      return;
+    }
+    if ((state as ObscureText).isObscure == true) {
+      emit(ObscureText(false));
+      return;
+    }
+  }
+
+  @override
+  void onChange(Change<LoginState> change) {
+    print(change);
+    super.onChange(change);
+  }
 }

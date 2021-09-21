@@ -25,3 +25,11 @@ class Done extends LoginState {
   @override
   List<Object?> get props => [];
 }
+
+class ObscureText extends LoginState {
+  final bool isObscure;
+
+  ObscureText(this.isObscure);
+  @override
+  List<Object?> get props => [isObscure];
+}

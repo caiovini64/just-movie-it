@@ -3,4 +3,5 @@ abstract class LoginPresenter {
   void goToSignUp();
   String? validateEmail(String? email);
   String? validatePassword(String? password);
+  void obscureText();
 }
