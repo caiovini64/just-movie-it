@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
-import 'package:just_movie_it/data/helpers/exceptions/server_exception.dart';
-import 'package:just_movie_it/data/repositories/auth_repository.dart';
-import 'package:just_movie_it/domain/datasources/datasources.dart';
-import 'package:just_movie_it/domain/entities/entities.dart';
-import 'package:just_movie_it/domain/helpers/errors/domain_error.dart';
-import 'package:just_movie_it/domain/helpers/parameters/auth_parameters.dart';
-import 'package:just_movie_it/domain/repositories/repositories.dart';
 import 'package:mocktail/mocktail.dart';
+
+import 'package:just_movie_it/modules/authentication/data/helpers/exceptions/exceptions.dart';
+import 'package:just_movie_it/modules/authentication/data/helpers/exceptions/server_exception.dart';
+import 'package:just_movie_it/modules/authentication/data/repositories/repositories.dart';
+import 'package:just_movie_it/modules/authentication/domain/datasources/datasources.dart';
+import 'package:just_movie_it/modules/authentication/domain/entities/entities.dart';
+import 'package:just_movie_it/modules/authentication/domain/helpers/errors/errors.dart';
+import 'package:just_movie_it/modules/authentication/domain/helpers/parameters/parameters.dart';
+import 'package:just_movie_it/modules/authentication/domain/repositories/repositories.dart';
 
 class AuthDatasourceSpy extends Mock implements IAuthDatasource {}
 
