@@ -1,14 +1,13 @@
 import 'dart:async';
-
+import 'package:mocktail/mocktail.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:just_movie_it/data/datasources/datasources.dart';
-import 'package:just_movie_it/data/helpers/exceptions/auth_exception.dart';
-import 'package:just_movie_it/data/http/http_client.dart';
-import 'package:just_movie_it/domain/datasources/auth_datasource.dart';
-import 'package:just_movie_it/domain/helpers/parameters/auth_parameters.dart';
-import 'package:mocktail/mocktail.dart';
 
+import 'package:just_movie_it/modules/authentication/data/datasources/datasources.dart';
+import 'package:just_movie_it/modules/authentication/data/helpers/exceptions/exceptions.dart';
+import 'package:just_movie_it/modules/authentication/domain/datasources/datasources.dart';
+import 'package:just_movie_it/modules/authentication/domain/helpers/parameters/parameters.dart';
+import 'package:just_movie_it/shared/data/http/http_client.dart';
 import '../../helpers/user_mocks.dart';
 
 class HttpClientSpy extends Mock implements HttpClient {}
