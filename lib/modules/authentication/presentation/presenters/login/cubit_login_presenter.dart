@@ -1,13 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:just_movie_it/modules/authentication/domain/repositories/auth_repository.dart';
 import 'package:meta/meta.dart';
 
 import 'package:just_movie_it/modules/authentication/ui/pages/login/login_presenter.dart';
 part 'cubit_login_state.dart';
 
 class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
-  CubitLoginPresenter() : super(Initial());
+  final IAuthRepository repository;
+  CubitLoginPresenter({required this.repository}) : super(Initial());
 
   @override
   void goToSignUp() {
