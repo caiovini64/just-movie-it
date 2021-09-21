@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:just_movie_it/modules/authentication/presentation/presenters/login/cubit_login_presenter.dart';
-import 'package:just_movie_it/modules/authentication/ui/components/components.dart';
+import 'package:just_movie_it/shared/ui/components/components.dart';
 
 class EmailInput extends StatelessWidget {
   final TextEditingController controller;

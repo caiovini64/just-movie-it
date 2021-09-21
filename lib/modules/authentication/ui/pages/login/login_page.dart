@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_movie_it/modules/authentication/presentation/presenters/login/cubit_login_presenter.dart';
 import 'package:just_movie_it/modules/authentication/ui/components/components.dart';
 import 'package:just_movie_it/modules/authentication/ui/mixins/mixins.dart';
+import 'package:just_movie_it/shared/ui/components/components.dart';
 import 'components/components.dart';
 
 class LoginPage extends StatelessWidget with ResponsivenessManager {

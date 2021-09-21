@@ -2,11 +2,12 @@ import 'dart:convert';
 
 import 'package:just_movie_it/modules/authentication/data/helpers/exceptions/exceptions.dart';
 import 'package:just_movie_it/modules/authentication/data/helpers/exceptions/server_exception.dart';
-import 'package:just_movie_it/modules/authentication/data/http/http_client.dart';
 import 'package:just_movie_it/modules/authentication/data/models/user_model.dart';
 import 'package:just_movie_it/modules/authentication/domain/datasources/datasources.dart';
 import 'package:just_movie_it/modules/authentication/domain/entities/entities.dart';
 import 'package:just_movie_it/modules/authentication/domain/helpers/parameters/parameters.dart';
+
+import 'package:just_movie_it/shared/data/http/http_client.dart';
 
 class AuthDatasource implements IAuthDatasource {
   final HttpClient client;

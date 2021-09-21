@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart';
-
-import 'package:just_movie_it/modules/authentication/data/http/http_client.dart';
+import 'package:just_movie_it/shared/data/http/http_client.dart';
 
 class HttpAdapter implements HttpClient {
   final Client client;
