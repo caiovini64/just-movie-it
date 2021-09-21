@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/ui/components/app_colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:just_movie_it/ui/pages/login/presentation/cubit_login_presenter.dart';
+import 'package:just_movie_it/presentation/presenters/login/cubit_login_presenter.dart';
 
 class EmailInput extends StatelessWidget {
   final TextEditingController controller;

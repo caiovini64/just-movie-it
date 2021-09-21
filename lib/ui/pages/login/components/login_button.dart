@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_movie_it/ui/components/components.dart';
-import 'package:just_movie_it/ui/pages/login/presentation/cubit_login_presenter.dart';
+import 'package:just_movie_it/presentation/presenters/login/cubit_login_presenter.dart';
 
 class LoginButton extends StatelessWidget {
   final GlobalKey<FormState> formKey;
