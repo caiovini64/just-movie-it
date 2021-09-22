@@ -29,7 +29,11 @@ class BlocLoginPresenter with LoadingManager, NavigationManager implements BlocB
 
   @override
   void validatePassword(String? password) {
-    if (password!.length <= 5) _passwordError.sink.add(DomainError.invalidPasswordLength);
+    if (password!.length <= 5) {
+      _passwordError.sink.add(DomainError.invalidPasswordLength);
+    }else{
+      _passwordError.sink.add(null);
+    }
       
     
   }
