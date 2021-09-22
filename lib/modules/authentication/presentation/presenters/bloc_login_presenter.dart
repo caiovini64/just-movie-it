@@ -6,11 +6,8 @@ import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 import 'package:just_movie_it/shared/presentation/mixins/mixins.dart';
 
 class BlocLoginPresenter
-    with LoadingManager
+    with LoadingManager, NavigationManager
     implements BlocBase, LoginPresenter {
-  @override
-  Stream<String> get navigateToStream => throw UnimplementedError();
-
   @override
   Stream<DomainError> get passwordErrorStream => throw UnimplementedError();
 
@@ -35,7 +32,7 @@ class BlocLoginPresenter
 
   @override
   void goToSignUp() {
-    // TODO: implement goToSignUp
+    setNavigation('/signUp');
   }
 
   @override
