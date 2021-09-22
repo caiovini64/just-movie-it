@@ -7,6 +7,8 @@ enum DomainError {
   userDisabled,
   serverError,
   noInternet,
+  invalidEmail,
+  invalidPasswordLength,
 }
 
 extension DomainErrorExtension on DomainError {
@@ -28,6 +30,10 @@ extension DomainErrorExtension on DomainError {
         return 'Internal server error.';
       case DomainError.noInternet:
         return 'No internet found.';
+      case DomainError.invalidEmail:
+        return 'Invalid email!';
+      case DomainError.invalidPasswordLength:
+        return 'The password must be over 6 characters!';
     }
   }
 }
