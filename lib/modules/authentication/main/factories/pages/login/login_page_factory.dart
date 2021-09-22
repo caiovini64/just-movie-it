@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-
-import 'package:just_movie_it/modules/authentication/main/factories/presenters/login_presenter_factory.dart';
+import 'package:flutter/material.dart';
 import 'package:just_movie_it/modules/authentication/ui/pages/login/login.dart';
 
-Widget makeLoginPage() => LoginPage(makeCubitLoginPresenter());
+Widget makeLoginPage() => LoginPage();

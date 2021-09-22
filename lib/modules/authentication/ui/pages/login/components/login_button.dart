@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:just_movie_it/modules/authentication/presentation/presenters/login/cubit_login_presenter.dart';
 import 'package:just_movie_it/shared/ui/components/components.dart';
 
 class LoginButton extends StatelessWidget {
@@ -18,22 +15,12 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final presenter = context.read<CubitLoginPresenter>();
-    return BlocBuilder<CubitLoginPresenter, LoginState>(
-      builder: (context, state) {
-        return StandardButton(
-          onPressed: () {
-            final email = emailController.value.text;
-            final password = passwordController.value.text;
-            if (formKey.currentState!.validate()) {
-              presenter.login(email, password);
-            }
-          },
-          child: state is Loading
-              ? const CircularProgressIndicator(color: Colors.white)
-              : const Text('Login'),
-        );
+    return StandardButton(
+      onPressed: () {
+        final email = emailController.value.text;
+        final password = passwordController.value.text;
       },
+      child: const Text('Login'),
     );
   }
 }
