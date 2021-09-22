@@ -32,7 +32,7 @@ class BlocLoginPresenter
 
   @override
   void goToSignUp() {
-    setNavigation('/signUp');
+    setNavigation('/signup');
   }
 
   @override
