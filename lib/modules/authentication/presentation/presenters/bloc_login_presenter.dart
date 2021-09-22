@@ -3,13 +3,11 @@ import 'dart:async';
 import 'package:just_movie_it/modules/authentication/domain/helpers/errors/domain_error.dart';
 import 'package:just_movie_it/modules/authentication/ui/pages/login/login_presenter.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
+import 'package:just_movie_it/shared/presentation/mixins/mixins.dart';
 
-class BlocLoginPresenter implements BlocBase, LoginPresenter {
-  final _isLoading = StreamController<bool>();
-
-  @override
-  Stream<bool> get isLoadingStream => _isLoading.stream;
-
+class BlocLoginPresenter
+    with LoadingManager
+    implements BlocBase, LoginPresenter {
   @override
   Stream<String> get navigateToStream => throw UnimplementedError();
 
@@ -31,9 +29,8 @@ class BlocLoginPresenter implements BlocBase, LoginPresenter {
 
   @override
   Future<void> auth() async {
-    _isLoading.sink.add(true);
-    Future.delayed(const Duration(seconds: 2))
-        .then((value) => _isLoading.sink.add(false));
+    setLoading();
+    Future.delayed(const Duration(seconds: 2)).then((value) => setNotLoading());
   }
 
   @override
@@ -43,6 +40,6 @@ class BlocLoginPresenter implements BlocBase, LoginPresenter {
 
   @override
   void dispose() {
-    _isLoading.close();
+    isLoading.close();
   }
 }
