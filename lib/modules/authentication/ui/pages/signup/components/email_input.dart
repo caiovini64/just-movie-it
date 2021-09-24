@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/modules/authentication/domain/helpers/errors/domain_error.dart';
-import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_login_presenter.dart';
+import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_signup_presenter.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 import 'package:just_movie_it/shared/ui/components/components.dart';
 
-class PasswordInput extends StatelessWidget {
+class EmailInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final presenter = BlocProvider.of<BlocLoginPresenter>(context);
+    final presenter = BlocProvider.of<BlocSignupPresenter>(context);
     return StreamBuilder<DomainError?>(
-        stream: presenter.passwordErrorStream,
+        stream: presenter.emailErrorStream,
         builder: (context, snapshot) {
           return Semantics(
-            label: 'Password Input',
+            label: 'Email Input',
             child: Container(
               padding: const EdgeInsets.only(left: 10),
               height: 60,
@@ -21,19 +21,15 @@ class PasswordInput extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextFormField(
-                onChanged: presenter.validatePassword,
-                keyboardType: TextInputType.visiblePassword,
+                onChanged: presenter.validateEmail,
+                keyboardType: TextInputType.emailAddress,
                 style: Theme.of(context).textTheme.bodyText1,
                 decoration: InputDecoration(
                   errorText: snapshot.hasData ? snapshot.data!.message : '',
-                  hintText: 'Password',
+                  hintText: 'Email',
                   hintStyle: Theme.of(context).textTheme.subtitle1,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                  ),
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.visibility),
                   ),
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,

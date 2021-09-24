@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_login_presenter.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 import 'package:just_movie_it/shared/ui/components/components.dart';

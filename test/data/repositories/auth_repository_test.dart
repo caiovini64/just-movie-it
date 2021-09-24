@@ -16,6 +16,7 @@ import 'package:just_movie_it/modules/authentication/domain/repositories/reposit
 
 class AuthDatasourceSpy extends Mock implements IAuthDatasource {}
 
+// ignore: avoid_implementing_value_types
 class AuthParametersFake extends Fake implements AuthParameters {}
 
 void main() {
