@@ -36,6 +36,7 @@ dependencies:
   dartz:
   http:
   flutter_dotenv:
+  rxdart:
 
 dev_dependencies:
   flutter_test:
