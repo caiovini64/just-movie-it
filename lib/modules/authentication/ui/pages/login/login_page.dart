@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_login_presenter.dart';
 
-import 'package:just_movie_it/modules/authentication/ui/components/components.dart';
 import 'package:just_movie_it/modules/authentication/ui/mixins/mixins.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 import 'package:just_movie_it/shared/ui/components/components.dart';

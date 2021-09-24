@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/modules/authentication/domain/helpers/errors/domain_error.dart';
-import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_signup_presenter.dart';
+import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_login_presenter.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 import 'package:just_movie_it/shared/ui/components/components.dart';
 
-class EmailInput extends StatelessWidget {
+class PasswordInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final presenter = BlocProvider.of<BlocSignupPresenter>(context);
+    final presenter = BlocProvider.of<BlocLoginPresenter>(context);
     return StreamBuilder<DomainError?>(
-        stream: presenter.emailErrorStream,
+        stream: presenter.passwordErrorStream,
         builder: (context, snapshot) {
           return Semantics(
-            label: 'Email Input',
+            label: 'Password Input',
             child: Container(
               padding: const EdgeInsets.only(left: 10),
               height: 60,
@@ -21,12 +21,13 @@ class EmailInput extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextFormField(
-                onChanged: presenter.validateEmail,
-                keyboardType: TextInputType.emailAddress,
+                onChanged: presenter.validatePassword,
+                keyboardType: TextInputType.visiblePassword,
                 style: Theme.of(context).textTheme.bodyText1,
+                obscureText: true,
                 decoration: InputDecoration(
                   errorText: snapshot.hasData ? snapshot.data!.message : '',
-                  hintText: 'Email',
+                  hintText: 'Password',
                   hintStyle: Theme.of(context).textTheme.subtitle1,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),

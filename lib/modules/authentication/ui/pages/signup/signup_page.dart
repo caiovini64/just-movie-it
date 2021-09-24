@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_signup_presenter.dart';
-import 'package:just_movie_it/modules/authentication/ui/components/components.dart';
 import 'package:just_movie_it/modules/authentication/ui/mixins/mixins.dart';
+import 'package:just_movie_it/modules/authentication/ui/pages/signup/components/components.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 
 class SignupPage extends StatelessWidget with ResponsivenessManager {
