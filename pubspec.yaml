@@ -25,17 +25,15 @@ dependencies:
     sdk: flutter
 
 
-  lint: ^1.6.0
-  get:
-  flutter_bloc:
+  dartz:
   device_preview: 0.7.4
   equatable:
-  bloc_test:
-  mocktail:
   faker:
-  dartz:
-  http:
+  flutter_bloc:
   flutter_dotenv:
+  http:
+  lint: ^1.6.0
+  mocktail:
   rxdart:
 
 dev_dependencies:
