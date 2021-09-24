@@ -4,6 +4,11 @@
     🎥<a> Just Movie It </a>
 </h1>
 
+<div align="center">
+    <a href="https://github.com/caiovini64/just-movie-it/actions/workflows/main.yml"> <img src="https://github.com/caiovini64/just-movie-it/actions/workflows/main.yml/badge.svg"></a>
+</div>
+
+
 
 
 <h3 align="center">
