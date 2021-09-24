@@ -1,6 +1,5 @@
 import 'package:just_movie_it/modules/authentication/data/models/user_model.dart';
 import 'package:just_movie_it/modules/authentication/domain/entities/entities.dart';
-import 'package:just_movie_it/modules/authentication/domain/helpers/parameters/auth_parameters.dart';
 
 const kUserEntity = UserEntity(
   email: 'email@email.com',

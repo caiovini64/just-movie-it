@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:just_movie_it/modules/authentication/domain/helpers/errors/domain_error.dart';
-import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_login_presenter.dart';
-import 'package:just_movie_it/modules/authentication/ui/pages/login/components/components.dart';
+import 'package:just_movie_it/modules/authentication/presentation/presenters/bloc_signup_presenter.dart';
 import 'package:just_movie_it/shared/presentation/bloc_provider.dart';
 import 'package:just_movie_it/shared/ui/components/components.dart';
 
 class PasswordInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final presenter = BlocProvider.of<BlocLoginPresenter>(context);
+    final presenter = BlocProvider.of<BlocSignupPresenter>(context);
     return StreamBuilder<DomainError?>(
         stream: presenter.passwordErrorStream,
         builder: (context, snapshot) {
