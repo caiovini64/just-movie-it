@@ -8,20 +8,27 @@ import 'package:just_movie_it/shared/ui/components/components.dart';
 import 'package:just_movie_it/shared/ui/mixins/navigation_manager.dart';
 import 'components/components.dart';
 
-class LoginPage extends StatelessWidget
-    with ResponsivenessManager, UiNavigationManager {
+class LoginPage extends StatefulWidget {
   final BlocLoginPresenter presenter;
-  LoginPage(this.presenter);
+  const LoginPage(this.presenter);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage>  with ResponsivenessManager, UiNavigationManager {
+
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<BlocLoginPresenter>(
-      bloc: presenter,
+      bloc: widget.presenter,
       child: Builder(
         builder: (context) {
-          handleNavigation(context, presenter.navigateToStream, clear: true);
+          handleNavigation(context, widget.presenter.navigateToStream, clear: true);
           return Scaffold(
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
