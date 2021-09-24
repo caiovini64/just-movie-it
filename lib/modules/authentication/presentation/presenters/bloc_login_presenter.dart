@@ -58,9 +58,7 @@ class BlocLoginPresenter
   }
 
   @override
-  void goToSignUp() {
-    setNavigation('/signup');
-  }
+  void goToSignUp() => setNavigation('/signup');
 
   @override
   void dispose() {

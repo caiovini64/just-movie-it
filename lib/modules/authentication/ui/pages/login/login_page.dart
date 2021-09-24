@@ -24,8 +24,7 @@ class _LoginPageState extends State<LoginPage>
       bloc: widget.presenter,
       child: Builder(
         builder: (context) {
-          handleNavigation(context, widget.presenter.navigateToStream,
-              clear: true);
+          handleNavigation(context, widget.presenter.navigateToStream);
           return Scaffold(
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
