@@ -13,13 +13,13 @@
 
 ## 📃 About
 
-Just Movie It is an app of movie recommendations, where the user can see movie lists and see selected movie details.
+Just Movie It is an app of movie recommendations, where the user can see movie lists and see selected movie details using BloC Pattern to State Management and TDD.
 
 **This project is in the planning stage and all that can be changed.**
 
 ## ⚙️ Functional Requirements
 
-- [ ] The system should allow sign in
+- [x] The system should allow sign in
 - [ ] The system should allow sign up
 - [ ] The system should allow viewing of a list of popular movies
 - [ ] The system should allow viewing of a list of top-rated movies 
@@ -30,7 +30,7 @@ Just Movie It is an app of movie recommendations, where the user can see movie l
 
 
 ## 📐 Architecture
-   The application's architecture is based on google's Jetpack Architecture proposal for Android development with Kotlin. 
+   The application's architecture is based on google's Jetpack Architecture proposal for Android development with Kotlin and Clean Architecture. 
  ![DataFlow](https://user-images.githubusercontent.com/45527157/131545153-229f54ff-b546-4e08-a027-11771cfeff44.png)
    
    For the **presentation layer**, the MVP Pattern was chosen, and the presenter is responsible for the state management of the view. The ViewModel class isn't the same as the MVVM, the ViewModel here is the data model that will be shown by the view. 
